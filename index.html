@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Hud">
+    <h2>jugador: Host</h2>
+
+    <section id="stats">
+     <h3>vida</h3>
+    <input type="range" max = 100 min="0" oninput="actualizarVida(event)">
+    <p id="texto"></p>
+    <div id="barraVida"></div>
+    <p id="estadoVida"></p>
+
+    <h3>fuerza</h3>
+    <input type="range" max="100" min="0" oninput="actualizarFuerza(event)">
+    <p id="texto1"></p>
+    <div id="barraFuerza"></div>
+    <p id="estadoFuerza"></p>
+
+    <h3>energia</h3>
+    <input type="range" max="100" min="0" oninput="actualizarEnergia(event)">
+    <p id="texto2"></p>
+    <div id="barraEnergia"></div>
+    <p id="estadoEnergia"></p>
+    </section>
+
+    <section id="xp">
+        <h3>experiencia</h3>
+        <input type="range" max="100" min="0" oninput="actualizarXP(event)">
+        <p id="textoEXP"></p>
+        <div id="barraEXP"></div>
+        <p id="estadoEXP"></p>
+    </section>
+
+    <section id="inventario">
+    <button onclick="mandar(event)">Agregar</button>
+    <input type="text"  id="objeto" placeholder="escriba el objeto que precisa">
+    <select id="rareza">
+    <option value="comun">comun</option>
+    <option value="raro">raro</option>
+    <option value="legendario">legendario</option>
+    </select>
+    <p id="listaInventario"></p>
+    </section>
+    
+    <section>
+        <label><input type="checkbox" value="Magia" onchange="toggleHabilidad(event)"></label>
+        <label><input type="checkbox" value="Fuerza" onchange="toggleHabilidad(event)"></label>
+        <label><input type="checkbox" value="agilidad" onchange="toggleHabilidad(event)"></label>
+        <ul id="habilidades"></ul>
+    </section>
+
+<section id="acciones">
+    <h3>acciones</h3>
+<button onclick="atacar(event)">atacar</button>
+<button onclick="defender(event)">defender</button>
+<button onclick="curar(event)">curarse</button>
+<p id="accionActual"></p>
+</section>
+</div>
+<audio id="musicaFondo" autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.querySelector('#musicaFondo').play()">▶️ Play</button>
+<button onclick="document.querySelector('#musicaFondo').pause()">⏸️ Pause</button>
+
+    <script src="main.js"></script>
+</body>
+</html>
